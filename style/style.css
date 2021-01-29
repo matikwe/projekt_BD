@@ -62,7 +62,7 @@ nav {
 main .test2 input {
     width: 40%;
     height: 40px;
-    background: #000000;
+    background: gray;
     border-radius: 40px;
     border: 1px solid var(--orange);
     padding: 0 15px;
@@ -103,4 +103,14 @@ main .test2 textarea:focus {
 
 .info:hover {
     text-decoration: underline;
+}
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
 }

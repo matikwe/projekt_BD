@@ -19,8 +19,9 @@ include "topMenu.php";
         <input type="text" placeholder="Wpisz nazwisko" name="surname" value="<?php if(!empty($_POST['surname'])) echo $_POST['surname']; ?>">
         <input type="text" placeholder="Wpisz mail" name="mailA" value="<?php if(!empty($_POST['mailA'])) echo $_POST['mailA']; ?>">
         <input type="text" placeholder="Powtórz mail" name="mailB" value="<?php if(!empty($_POST['mailB'])) echo $_POST['mailB']; ?>">
-        <input type="date" name="date" value="" min="2000-01-01" max="2019-12-31">
-
+        <label>
+            <input type="date" name="date" value="<?php if(!empty($_POST['date'])) echo $_POST['date']; ?>" min="1900-01-01" max="<?php echo $_SESSION['currTime']; ?>">
+        </label>
         <div id="error">
             <p><?php echo $_SESSION['error'];?></p>
         </div>

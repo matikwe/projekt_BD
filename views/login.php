@@ -15,7 +15,7 @@
         <input type="password" placeholder="Hasło" name="password">
 
         <div id="error">
-            <!--blad -->
+            <p><?php echo $_SESSION['error'];?></p>
         </div>
 
         <a href="index.php?action=registration" class="info">Nie masz konta? Zarejestruj się...</a>

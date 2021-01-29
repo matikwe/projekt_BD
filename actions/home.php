@@ -7,6 +7,5 @@ $sth = ibase_query($dbh, $query);
 while ($row = ibase_fetch_object($sth)) {
     echo $row->IMIE, $row->NAZWISKO, "\n";
 }
-
 ibase_free_result($sth);
 ibase_close($dbh);
