@@ -22,7 +22,7 @@ include "topMenu.php";
         <input type="date" name="date" value="" min="2000-01-01" max="2019-12-31">
 
         <div id="error">
-
+            <p><?php echo $_SESSION['error'];?></p>
         </div>
 
         <input type="submit" value="Zarejestruj" class="submit" name="action">
