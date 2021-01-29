@@ -12,14 +12,40 @@ if(isset($_POST['action'])){
     $mailA = $_POST['mailA'];
     $mailB = $_POST['mailB'];
     $date = $_POST['date'];
+    $correct = true;
 
     if(empty($login) || empty($passwordA) || empty($passwordB) || empty($name) ||
         empty($surname) || empty($mailA) || empty($mailB) || empty($date)){
 
-        $_SESSION['error'] = 'ello';
+        $_SESSION['error'] .= "Uzupełnij dane.";
 
     }else{
-        $_SESSION['error'] = 'dalsdze kroki';
 
+        if($passwordA == $passwordB){
+            if(strlen($passwordA) < 7){
+                $_SESSION['error'] .= "Hasło musi mieć 8 znaków. ";
+                $correct = false;
+            }
+        }else{
+            $_SESSION['error'] .= "Hasło się różnią. ";
+            $correct = false;
+        }
+
+        if(filter_var($mailA, FILTER_VALIDATE_EMAIL)){
+            if($mailA != $mailB){
+                $_SESSION['error'] .= "Maile się różnią. ";
+                $correct = false;
+            }
+        }else{
+            $_SESSION['error'] .= "Zły format maila. ";
+            $correct = false;
+        }
     }
+
+    //warunek istniejącego usera
+
+    //warunek instniejacego maila
+
+    //dodanie do bazy
+
 }
