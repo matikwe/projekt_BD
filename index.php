@@ -20,4 +20,3 @@ if(array_key_exists('action', $_GET))
 
 include(_ROOT_PATH.DIRECTORY_SEPARATOR.'actions'.DIRECTORY_SEPARATOR.$action.'.php');
 include(_ROOT_PATH.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.$action.'.php');
-

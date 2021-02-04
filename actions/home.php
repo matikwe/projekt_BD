@@ -1,11 +1,18 @@
 <?php
 
-$dbh = ibase_connect('127.0.0.1:c:\bazy\PROJEKT.FDB', 'SYSDBA', 'masterkey', 'WIN1250');
-$query = "SELECT * FROM AKTORZY";
+//try
+//{
+//    $pdo = new PDO('firebird:dbname=127.0.0.1:C:\bazy\PROJEKT.FDB', 'SYSDBA', 'masterkey');
+//    echo 'Połączenie nawiązane!';
+//}
+//catch(PDOException $e)
+//{
+//    echo 'Połączenie nie mogło zostać utworzone: ' . $e->getMessage();
+//}
+//
+//$query = $pdo->query("SELECT * FROM AKTORZY");
+//
+//foreach ($query as $row) {
+//    echo $row['NAZWISKO'];
+//}
 
-$sth = ibase_query($dbh, $query);
-while ($row = ibase_fetch_object($sth)) {
-    echo $row->IMIE, $row->NAZWISKO, "\n";
-}
-ibase_free_result($sth);
-ibase_close($dbh);
