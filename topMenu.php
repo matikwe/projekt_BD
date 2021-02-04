@@ -11,5 +11,6 @@
                 echo '<a href="index.php?action=logout"><div class="option">WYLOGUJ</div></a>';
             }
         ?>
+        <a href="index.php?action=adminPanel" class="option">PANEL ADMINA</a>
     </div>
 </nav>

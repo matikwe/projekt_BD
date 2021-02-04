@@ -4,13 +4,13 @@ $_SESSION['error'] = '';
 
 if(isset($_POST['action'])){
 
-    $login = $_POST['login'];
+    $login = strtolower($_POST['login']);
     $passwordA = $_POST['passwordA'];
     $passwordB = $_POST['passwordB'];
     $name = $_POST['name'];
     $surname = $_POST['surname'];
-    $mailA = $_POST['mailA'];
-    $mailB = $_POST['mailB'];
+    $mailA = strtolower($_POST['mailA']);
+    $mailB = strtolower($_POST['mailB']);
     $date = $_POST['date'];
     $correct = true;
 
@@ -25,7 +25,7 @@ if(isset($_POST['action'])){
         empty($surname) || empty($mailA) || empty($mailB) || empty($date)) {
 
         $_SESSION['error'] .= "Uzupełnij dane.";
-
+        $correct = false;
     } else {
 
         if($passwordA == $passwordB) {
@@ -43,48 +43,33 @@ if(isset($_POST['action'])){
                 $_SESSION['error'] .= "Maile się różnią. ";
                 $correct = false;
             } else {
-                $query = $dbh->query("SELECT * FROM uzytkownicy WHERE email = "."'$mailA'");
+                        $query = $dbh->query("SELECT count(email) FROM uzytkownicy WHERE email = "."'$mailA'");
 
-                //$sth = ibase_query($dbh, $query);
-
-                if(ibase_fetch_row($sth) == false) {
-                    //nie ma takiego loginu
-                } else {
-                    $_SESSION['error'] .= "Podany email istnieje. ";
-                    $correct = false;
-                }
-            }
-        } else {
+                        if($query->fetchColumn() >= 1) { //tu coś
+                            $_SESSION['error'] .= "Podany email istnieje. ";
+                            $correct = false;
+                        }
+                    }
+        }else {
             $_SESSION['error'] .= "Zły format maila. ";
             $correct = false;
         }
 
-        $query = $dbh->query("SELECT * FROM uzytkownicy WHERE login = "."'$login'");
+        $query = $dbh->query("SELECT count(login) FROM uzytkownicy WHERE login = '".$login."'");
 
-        //$sth = ibase_query($dbh, $query);
-
-        if(ibase_fetch_row($sth) == false) {
-            //nie ma takiego loginu
-        } else {
+        if($query->fetchColumn() >= 1) { //tu coś
             $_SESSION['error'] .= "Podany login istnieje. ";
             $correct = false;
         }
     }
 
-    //warunek instniejacego maila
     if($correct == true) {
 
         $passHash = password_hash($passwordA, PASSWORD_DEFAULT);
 
-        $query = "INSERT INTO uzytkownicy (login, haslo, imie, nazwisko, email, data_urodzenia) 
-                    values('$login', '$passHash', '$name', '$surname', '$mailA', '$date')";
-
-        $sth = ibase_query($dbh, $query);
-
+        $query = $dbh->query("INSERT INTO uzytkownicy (login,haslo,imie,nazwisko,email,data_urodzenia) values('".$login."','".$passHash."','".$name."','".$surname."','".$mailA."','".$date."')");
         header("Location: index.php?action=login");
     }
-
-    ibase_close($dbh);
 }
 
 
