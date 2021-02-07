@@ -20,9 +20,9 @@ if(isset($_POST['buttonLogin'])){
                     echo $_SESSION['currUser'];
                     $correctLogin = true;
                 }
-            }
-        header("Location: index.php?action=home");
         }
+        header("Location: index.php?action=home");
+    }
 
 
         if($correctLogin == false) {

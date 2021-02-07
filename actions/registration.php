@@ -51,7 +51,7 @@ if(isset($_POST['action'])){
                         }
                     }
         }else {
-            $_SESSION['error'] .= "Zły format maila. ";
+            $_SESSION['error'] .= "Zły format maila.";
             $correct = false;
         }
 
