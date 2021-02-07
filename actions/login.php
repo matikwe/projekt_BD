@@ -14,18 +14,20 @@ if(isset($_POST['buttonLogin'])){
         $query = $dbh->query("select id_uzytkownik, login, haslo from uzytkownicy WHERE login = "."'$login'");
 
         foreach($query as $row) {
-                if(password_verify($_POST['password'], $row['HASLO']) == true) {
-                    $_SESSION['currID'] = $row['ID_UZYTKOWNIK'];
-                    $_SESSION['currUser'] = $row['LOGIN'];
-                    echo $_SESSION['currUser'];
-                    $correctLogin = true;
-                }
+
+            if(password_verify($_POST['password'], $row['HASLO']) == true) {
+                $_SESSION['currID'] = $row['ID_UZYTKOWNIK'];
+                $_SESSION['currUser'] = $row['LOGIN'];
+                echo $_SESSION['currUser'];
+                $correctLogin = true;
+                header("Location: index.php?action=home");
+            }
         }
-        header("Location: index.php?action=home");
     }
 
 
-        if($correctLogin == false) {
-            $_SESSION['error'] = "Błędne dane logowania. ";
-        }
+    if($correctLogin == false) {
+        $_SESSION['error'] = "Błędne dane logowania. ";
+    }
+
 }

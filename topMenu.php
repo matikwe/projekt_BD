@@ -11,6 +11,14 @@
                 echo '<a href="index.php?action=logout"><div class="option">WYLOGUJ</div></a>';
             }
         ?>
-        <a href="index.php?action=adminPanel" class="option">PANEL ADMINA</a>
+
+        <?php
+        if(empty($_SESSION['ReffID']))
+        {
+            echo ' <a href="index.php?action=adminPanel" class="option">PANEL ADMINA</a>';
+        }else{
+            echo '<a href="index.php?action=logout"><div class="option">WYLOGUJ</div></a>';
+        }
+        ?>
     </div>
 </nav>

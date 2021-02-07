@@ -67,7 +67,13 @@ if(isset($_POST['action'])){
 
         $passHash = password_hash($passwordA, PASSWORD_DEFAULT);
 
-        $query = $dbh->query("INSERT INTO uzytkownicy (login,haslo,imie,nazwisko,email,data_urodzenia) values('".$login."','".$passHash."','".$name."','".$surname."','".$mailA."','".$date."')");
+        if(empty($_GET['idreff'])){
+            $IDreff = 0;
+        }else{
+            $IDreff = $_GET['idreff'];
+        }
+
+        $query = $dbh->query("INSERT INTO uzytkownicy (login,haslo,imie,nazwisko,email,data_urodzenia) values('".$login."','".$passHash."','".$name."','".$surname."','".$mailA."','".$date."','".$IDreff."')");
         header("Location: index.php?action=login");
     }
 }
