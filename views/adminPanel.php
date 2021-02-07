@@ -12,7 +12,7 @@ include "topMenu.php";
 
 <main>
     <?php
-    if(empty($_SESSION['ReffID']))
+    if(empty($_SESSION['idreff']))
     {
     ?>
         <form action="index.php?action=adminPanel" class="test2" method="post">

@@ -16,6 +16,6 @@ $url = "http://";
 
 $url.= $_SERVER['HTTP_HOST'];
 
-$url.= '/projekt_BD/index.php?action=registration&ReffID='.$_SESSION['ReffID'];
+$url.= '/projekt_BD/index.php?action=registration&idreff='.$_SESSION['idreff'];
 
 echo 'Zarabiaj 10 % za każdy zakup !!! Twój link: '.$url;

@@ -13,7 +13,7 @@
         ?>
 
         <?php
-        if(empty($_SESSION['ReffID']))
+        if(empty($_SESSION['idreff']))
         {
             echo ' <a href="index.php?action=adminPanel" class="option">PANEL ADMINA</a>';
         }else{

@@ -11,7 +11,7 @@ include "topMenu.php";
 ?>
 
 <main>
-    <form action="index.php?action=registration" class="test2" method="POST">
+    <form action="index.php?action=registration&idreff=<?php if(isset($_GET['idreff'])) echo $_GET['idreff']; else echo 0; ?>" class="test2" method="POST">
         <input type="text" placeholder="Wpisz login" name="login" value="<?php if(!empty($_POST['login'])) echo $_POST['login']; ?>">
         <input type="password" placeholder="Wpisz hasło" name="passwordA">
         <input type="password" placeholder="Powtórz hasło" name="passwordB">
