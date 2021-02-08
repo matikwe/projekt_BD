@@ -12,7 +12,7 @@ include "topMenu.php";
 <main>
     <?php
         echo '<table border=1>';
-        echo '<tr><th>ID</th><th>Imię</th><th>Nazwisko</th></tr>';
+        echo '<tr><th>ID</th><th>Imię</th><th>Nazwisko</th><th>Akcje</th></tr>';
         $count = $i;
         for($i = 0; $i < $count; $i++) {
             echo '<tr><td>';
@@ -21,6 +21,9 @@ include "topMenu.php";
             echo $actors[$i]->getIMIE();
             echo '</td><td>';
             echo $actors[$i]->getNAZWISKO();
+            echo '</td><td>';
+            echo '<a href="index.php?action=editActor&id='.$actors[$i]->getIDAKTOR().'">Edytuj</a>';
+            echo '<a href="index.php?action=deleteActor"> Usuń</a>';
             echo '</td></tr>';
         }
         echo '</table>';

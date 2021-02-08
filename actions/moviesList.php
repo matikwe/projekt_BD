@@ -7,6 +7,6 @@ $query = $dbh->query("SELECT * FROM FILMY");
 
 $i = 0;
 foreach($query as $row) {
-    $actors[$i] = new Actor($row['ID_AKTOR'], $row['IMIE'], $row['NAZWISKO']);
+    $actors[$i] = new Movie($row['ID_AKTOR'], $row['IMIE'], $row['NAZWISKO']);
     $i++;
 }

@@ -4,6 +4,7 @@
 class Movie
 {
     private $ID_FILM;
+    private $ID_KATEGORIA;
     private $KATEGORIA;
     private $ID_REZYSER;
     private $TYTUL;
@@ -16,6 +17,7 @@ class Movie
     /**
      * Movie constructor.
      * @param $ID_FILM
+     * @param $ID_KATEGORIA
      * @param $KATEGORIA
      * @param $ID_REZYSER
      * @param $TYTUL
@@ -25,9 +27,10 @@ class Movie
      * @param $PRZEDZIAL_WIEKOWY
      * @param $BIEZACA_CENA
      */
-    public function __construct($ID_FILM, $KATEGORIA, $ID_REZYSER, $TYTUL, $IMIE, $NAZWISKO, $ROK_WYDANIA, $PRZEDZIAL_WIEKOWY, $BIEZACA_CENA)
+    public function __construct($ID_FILM, $ID_KATEGORIA, $KATEGORIA, $ID_REZYSER, $TYTUL, $IMIE, $NAZWISKO, $ROK_WYDANIA, $PRZEDZIAL_WIEKOWY, $BIEZACA_CENA)
     {
         $this->ID_FILM = $ID_FILM;
+        $this->ID_KATEGORIA = $ID_KATEGORIA;
         $this->KATEGORIA = $KATEGORIA;
         $this->ID_REZYSER = $ID_REZYSER;
         $this->TYTUL = $TYTUL;
@@ -52,6 +55,22 @@ class Movie
     public function setIDFILM($ID_FILM): void
     {
         $this->ID_FILM = $ID_FILM;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIDKATEGORIA()
+    {
+        return $this->ID_KATEGORIA;
+    }
+
+    /**
+     * @param mixed $ID_KATEGORIA
+     */
+    public function setIDKATEGORIA($ID_KATEGORIA): void
+    {
+        $this->ID_KATEGORIA = $ID_KATEGORIA;
     }
 
     /**

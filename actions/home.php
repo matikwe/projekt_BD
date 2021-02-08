@@ -5,12 +5,12 @@ include 'Movie.php';
 
 $dbh = new PDO('firebird:dbname=127.0.0.1:C:\bazy\PROJEKT.FDB', 'SYSDBA', 'masterkey');
 
-$query = $dbh->query("SELECT ID_FILM, KATEGORIA, F.ID_REZYSER, TYTUL, IMIE, NAZWISKO, ROK_WYDANIA, PRZEDZIAL_WIEKOWY, BIEZACA_CENA FROM FILMY F left outer join KATEGORIE K ON F.ID_KATEGORIA = K.ID_KATEGORIA
+$query = $dbh->query("SELECT ID_FILM, F.ID_KATEGORIA, KATEGORIA, F.ID_REZYSER, TYTUL, IMIE, NAZWISKO, ROK_WYDANIA, PRZEDZIAL_WIEKOWY, BIEZACA_CENA FROM FILMY F left outer join KATEGORIE K ON F.ID_KATEGORIA = K.ID_KATEGORIA
 left outer join REZYSERZY R ON F.ID_REZYSER = R.ID_REZYSER");
 
 $i = 0;
 foreach($query as $row) {
-    $films = new Movie($row['ID_FILM'], $row['KATEGORIA'], $row['ID_REZYSER'], $row['TYTUL'],
+    $films = new Movie($row['ID_FILM'], $row['ID_KATEGORIA'], $row['KATEGORIA'], $row['ID_REZYSER'], $row['TYTUL'],
         $row['IMIE'], $row['NAZWISKO'], $row['ROK_WYDANIA'], $row['PRZEDZIAL_WIEKOWY'], $row['BIEZACA_CENA']);
     $_SESSION['films'][$i] = serialize($films);
     $i++;
