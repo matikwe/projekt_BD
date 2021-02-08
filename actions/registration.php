@@ -73,7 +73,7 @@ if(isset($_POST['action'])){
             $IDreff = $_GET['idreff'];
         }
 
-        $query = $dbh->query("INSERT INTO uzytkownicy (login,haslo,imie,nazwisko,email,data_urodzenia) values('".$login."','".$passHash."','".$name."','".$surname."','".$mailA."','".$date."','".$IDreff."')");
+        $query = $dbh->query("INSERT INTO uzytkownicy (login,haslo,imie,nazwisko,email,data_urodzenia, id_reff) values('".$login."','".$passHash."','".$name."','".$surname."','".$mailA."','".$date."','".$IDreff."')");
         header("Location: index.php?action=login");
     }
 }

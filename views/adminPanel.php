@@ -12,7 +12,7 @@ include "topMenu.php";
 
 <main>
     <?php
-    if(empty($_SESSION['ReffID']))
+    if(empty($_SESSION['idreff']))
     {
     ?>
         <form action="index.php?action=adminPanel" class="test2" method="post">
@@ -29,6 +29,9 @@ include "topMenu.php";
     <?php
     }else{
     ?>
-
-        </main>
+        <a href="index.php?action=partnerProgram">Program partnerski</a>
+        <a href="index.php?action=moviesList">Lista filmów</a>
+        <a href="index.php?action=actorsList">Lista aktorów</a>
+        <a href="index.php?action=logout">WYLOGUJ</a>
+    </main>
 <?php } ?>

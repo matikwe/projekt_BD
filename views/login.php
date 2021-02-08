@@ -8,6 +8,9 @@
 <body>
 <?php
     include "topMenu.php";
+
+    if(empty($_SESSION['currID']))
+    {
 ?>
 <main>
     <form action="index.php?action=login" class="test2" method="post">
@@ -21,5 +24,9 @@
         <a href="index.php?action=registration" class="info">Nie masz konta? Zarejestruj się...</a>
         <input type="submit" value="Zaloguj" class="submit" name="buttonLogin">
     </form>
-</main>
 
+<?php }else {
+        echo '<a href="index.php?action=logout">WYLOGUJ</a>';
+    }
+?>
+</main>

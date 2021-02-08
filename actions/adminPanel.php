@@ -15,7 +15,7 @@ if(isset($_POST['buttonLogin'])){
         foreach ($query as $row) {
             if ($_POST['password'] == $row['HASLO']) {
                 $correctLogin = true;
-                $_SESSION['ReffID'] = $row['ID_PRACOWNIK'];
+                $_SESSION['idreff'] = $row['ID_PRACOWNIK'];
             }
         }
 
