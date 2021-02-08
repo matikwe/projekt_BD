@@ -32,6 +32,6 @@ include "topMenu.php";
         <a href="index.php?action=partnerProgram">Program partnerski</a>
         <a href="index.php?action=moviesList">Lista filmów</a>
         <a href="index.php?action=actorsList">Lista aktorów</a>
-        <a href="index.php?action=logout"><div class="option">WYLOGUJ</div></a>
+        <a href="index.php?action=logout">WYLOGUJ</a>
     </main>
 <?php } ?>
