@@ -26,3 +26,4 @@ $currPrice = $_GET['price'];
 
 $query = $dbh->query("INSERT INTO WYPOZYCZENIA (ID_UZYTKOWNIK, DATA_WYPOZYCZENIA, ID_PRACOWNIK, DATA_WYGASNIECIA_FILMU, ID_FILM, RABAT, CENA) values('".$currID."', '".$currDATE."','".$idreff."','".$expirationDate."','".$IDfilm."','".$RABAT."','".$currPrice."')");
 
+header("Location: index.php?action=home");
