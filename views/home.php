@@ -8,7 +8,7 @@
 <body>
 <?php
 include "topMenu.php";
-
+echo '<h1>TOP ileś FILMÓW</h1>';
 for($i = 0; $i < $_SESSION['countFilms']; $i++){
     $films = unserialize($_SESSION['films'][$i]);
 
