@@ -29,8 +29,6 @@ include "topMenu.php";
     <?php
     }else{
     ?>
-        <a href="index.php?action=partnerProgram">Program partnerski</a>
-        <a href="index.php?action=moviesList">Lista filmów</a>
-        <a href="index.php?action=actorsList">Lista aktorów</a>
+
         </main>
 <?php } ?>
