@@ -31,6 +31,12 @@ echo '<article>';
     echo '<h5>Rok wydania: '.$films->getROKWYDANIA().'</h5>';
     echo '<h5>Cena: '.$films->getBIEZACACENA().'</h5>';
     //przycisk wyp
+    if(empty($_SESSION['currID']))
+    {
+        echo '<a href="index.php?action=login" class="smallButton">Zaloguj się, aby wypożyczyć</a>';
+    }else{
+        echo '<a href="index.php?action=order&id_film='.$films->getIDFILM().'&price='.$films->getBIEZACACENA().'" class="smallButton">Wypożycz</a>';
+    }
 echo '</article>';
 }
 ?>

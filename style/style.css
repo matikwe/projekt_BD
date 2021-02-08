@@ -167,3 +167,21 @@ article h5{
         float: left;
     }
 }
+
+.smallButton {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    width: 200px;
+    margin: 10px auto 10px auto;
+    color: #FFFFFF;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 40px;
+    border: 1px solid var(--orange);
+    transition: 0.3s;
+}
+
+.smallButton:hover {
+    background-color: #222222;
+}
