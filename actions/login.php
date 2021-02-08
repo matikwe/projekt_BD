@@ -11,7 +11,7 @@ if(isset($_POST['buttonLogin'])){
         $login = $_POST['login'];
         //$dbh = ibase_connect('127.0.0.1:c:\bazy\PROJEKT.FDB', 'SYSDBA', 'masterkey', 'WIN1250');
         $dbh = new PDO('firebird:dbname=127.0.0.1:C:\bazy\PROJEKT.FDB', 'SYSDBA', 'masterkey');
-        $query = $dbh->query("select id_uzytkownik, login, haslo, id_reff from uzytkownicy WHERE login = "."'$login'");
+        $query = $dbh->query("select id_uzytkownik, login, haslo, ID_REFF from uzytkownicy WHERE login = "."'$login'");
 
         foreach($query as $row) {
 

@@ -15,9 +15,14 @@ if($price >= 200){
 }else{
     $RABAT = 0;
 }
+$query = $dbh->query("select cast('NOW' as date)+3 from FILMY");
+foreach ($query as $row){
+    $expirationDate = $row['ADD'];
+}
+
 $idreff = $_SESSION['idreff'];
 $IDfilm = $_GET['id_film'];
 $currPrice = $_GET['price'];
 
-$query = $dbh->query("INSERT INTO WYPOZYCZENIA (ID_UZYTKOWNIK, DATA_WYPOZYCZENIA, ID_PRACOWNIK, DATA_WYGASNIECIA_FILMU, ID_FILM, RABAT, CENA) values('".$currID."', '".$currDATE."','1','11.11.1111','".$IDfilm."','".$RABAT."','".$currPrice."')");
+$query = $dbh->query("INSERT INTO WYPOZYCZENIA (ID_UZYTKOWNIK, DATA_WYPOZYCZENIA, ID_PRACOWNIK, DATA_WYGASNIECIA_FILMU, ID_FILM, RABAT, CENA) values('".$currID."', '".$currDATE."','".$idreff."','".$expirationDate."','".$IDfilm."','".$RABAT."','".$currPrice."')");
 
