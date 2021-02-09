@@ -24,6 +24,7 @@ include "topMenu.php";
 </form>
 </main>
 <?php
+if(!empty($_SESSION['countSearchMovies'])){
     for($i = 0; $i < $_SESSION['countSearchMovies']; $i++) {
     $movies = unserialize($_SESSION['searchMovies'][$i]);
 
@@ -62,5 +63,6 @@ include "topMenu.php";
             echo '<a href="index.php?action=order&id_film=' . $movies->getIDFILM() . '&price=' . $movies->getBIEZACACENA() . '" class="smallButton">Wypożycz</a>';
             }
             echo '</article>';
+    }
     }
 }
