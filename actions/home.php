@@ -30,6 +30,7 @@ if(!empty($_SESSION['currID'])){
     }
 }
 $_SESSION['countMovies'] = $i;
+
 $query = $dbh->query("SELECT O.ID_FILM, A.ID_AKTOR, IMIE, NAZWISKO FROM AKTORZY A left outer join OBSADA O ON A.ID_AKTOR=O.ID_AKTOR");
 
 $i = 0;
