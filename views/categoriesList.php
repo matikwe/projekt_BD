@@ -21,7 +21,7 @@ include "topMenu.php";
         echo $categories[$i]->getKATEGORIA();
         echo '</td><td>';
         echo '<a href="index.php?action=editCategory&id='.$categories[$i]->getIDKATEGORIA().'">Edytuj</a>';
-        echo '<a href="index.php?action=deleteCategory"> Usuń</a>';
+        echo '<a href="index.php?action=deleteCategory&id='.$categories[$i]->getIDKATEGORIA().'"> Usuń</a>';
         echo '</td></tr>';
     }
     echo '</table>';
