@@ -8,41 +8,46 @@
 <body>
 <?php
 include "topMenu.php";
-echo '<h1>TOP ileś FILMÓW</h1>';
-for($i = 0; $i < $_SESSION['countFilms']; $i++){
-    $films = unserialize($_SESSION['films'][$i]);
 
+echo '<h1>NAJNOWSZE FILMY</h1>';
+for($i = $_SESSION['countMovies']-1; $i >= 0; $i--) {
+    $movies = unserialize($_SESSION['movies'][$i]);
 
-echo '<article>';
-    echo '<h1>'.$films->getTYTUL().'</h1>';
-    echo '<h5>'.'Reżyser: '.$films->getIMIE().' '.$films->getNAZWISKO().'</h5>';
-    echo '<h5>'.'Obsada: ';
-        for($j = 0; $j < $_SESSION['countActors']; $j++){
+    $RABAT = $movies->getBIEZACACENA() * 0.9;
+
+    if(empty($_SESSION['DateOfBirth']) || !empty($_SESSION['idreff'])){
+        $_SESSION['DateOfBirth'] = 1900;
+    }
+    if ($_SESSION['Now'] - $_SESSION['DateOfBirth'] >= $movies->getPRZEDZIALWIEKOWY()) {
+        echo '<article>';
+        echo '<h1>' . $movies->getTYTUL() . '</h1>';
+        echo '<h5>' . 'Reżyser: ' . $movies->getIMIE() . ' ' . $movies->getNAZWISKO() . '</h5>';
+        echo '<h5>' . 'Obsada: ';
+        for ($j = 0; $j < $_SESSION['countActors']; $j++) {
 
             $actors = unserialize($_SESSION['actors'][$j]);
-            if($_SESSION['ID_FILM'][$j] == $films->getIDFILM())
-            {
-               echo $actors->getIMIE().' '. $actors->getNAZWISKO(). ', ';
+            if ($_SESSION['ID_FILM'][$j] == $movies->getIDFILM()) {
+                echo $actors->getIMIE() . ' ' . $actors->getNAZWISKO() . ', ';
             }
         }
 
-    echo '<h5>Kategoria: '.$films->getKATEGORIA().'</h5>';
-    echo '<h5>Przedział wiekowy: '.$films->getPRZEDZIALWIEKOWY().'</h5>';
-    echo '<h5>Rok wydania: '.$films->getROKWYDANIA().'</h5>';
-    echo '<h5>Cena: '.$films->getBIEZACACENA().'</h5>';
-    //przycisk wyp
-    if(empty($_SESSION['currID']))
-    {
-        echo '<a href="index.php?action=login" class="smallButton">Zaloguj się, aby wypożyczyć</a>';
-    }else{
-        echo '<a href="index.php?action=order&id_film='.$films->getIDFILM().'&price='.$films->getBIEZACACENA().'" class="smallButton">Wypożycz</a>';
+        echo '<h5>Kategoria: ' . $movies->getKATEGORIA() . '</h5>';
+        echo '<h5>Przedział wiekowy: ' . $movies->getPRZEDZIALWIEKOWY() . '</h5>';
+        echo '<h5>Rok wydania: ' . $movies->getROKWYDANIA() . '</h5>';
+
+        if(empty($_SESSION['discount'])){
+            echo '<h5>Cena: ' . $movies->getBIEZACACENA() . '</h5>';
+        }else if($_SESSION['discount'] == true){
+            echo '<h5>Cena: <s>' . $movies->getBIEZACACENA() . '</s>  '.$RABAT.'</h5>';
+        }
+
+        //przycisk wyp
+        if (empty($_SESSION['currID'])) {
+            echo '<a href="index.php?action=login" class="smallButton">Zaloguj się na konto użytkownika, aby wypożyczyć</a>';
+        } else if (!empty($_SESSION['currID'])) {
+            echo '<a href="index.php?action=order&id_film=' . $movies->getIDFILM() . '&price=' . $movies->getBIEZACACENA() . '" class="smallButton">Wypożycz</a>';
+        }
+        echo '</article>';
     }
-echo '</article>';
 }
 ?>
-
-<a href="index.php?action=partnerProgram">Program partnerski</a>
-<a href="index.php?action=moviesList">Lista filmów</a>
-<a href="index.php?action=actorsList">Lista aktorów</a>
-<a href="index.php?action=categoriesList">Lista kategorii</a>
-<a href="index.php?action=logout">WYLOGUJ</a>

@@ -19,3 +19,9 @@ $url.= $_SERVER['HTTP_HOST'];
 $url.= '/projekt_BD/index.php?action=registration&idreff='.$_SESSION['idreff'];
 
 echo 'Zarabiaj 10 % za każdy zakup !!! Twój link: '.$url;
+
+echo "<br>".'Twój dzienny zarobek: '.$_SESSION['profitD'].' zł.';
+
+echo "<br>".'Twój miesięczny zarobek: '.$_SESSION['profitM'].' zł.';
+
+echo "<br>".'Twój roczny zarobek: '.$_SESSION['profitY'].' zł.';

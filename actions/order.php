@@ -10,6 +10,7 @@ foreach ($query as $row){
    $price += $row['CENA'];
    $currDATE = $row['CAST'];
 }
+
 if($price >= 200){
     $RABAT = $_GET['price'] * 0.1;
 }else{
@@ -19,8 +20,12 @@ $query = $dbh->query("select cast('NOW' as date)+3 from FILMY");
 foreach ($query as $row){
     $expirationDate = $row['ADD'];
 }
+if(empty($_SESSION['idreff'])){
+    $idreff = 0;
+}else{
+    $idreff = $_SESSION['idreff'];
+}
 
-$idreff = $_SESSION['idreff'];
 $IDfilm = $_GET['id_film'];
 $currPrice = $_GET['price'];
 
