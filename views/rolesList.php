@@ -24,6 +24,7 @@ include "topMenu.php";
             echo '<a href="index.php?action=rolesList&a=delete&id=' . $roles->getIDROLA() . '"> Usuń</a>';
             echo '</td></tr>';
         }
+        echo '<a href="index.php?action=rolesList&a=add">Dodaj rolę</a>';
     }else if($_GET['a'] == 'edit'){
         echo '<form action="index.php?action=rolesList&a=edit&id='.$_GET['id'].'" class="test2" method="POST">';
         echo '<input type="text" placeholder="Wpisz nową rolę" name="role">';
@@ -48,5 +49,5 @@ include "topMenu.php";
         echo '</form>';
     }
     ?>
-    <a href="index.php?action=rolesList&a=add">Dodaj rolę</a>
+
 </main>
