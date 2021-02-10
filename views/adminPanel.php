@@ -30,7 +30,7 @@ include "topMenu.php";
     }else{
     ?>
         <a href="index.php?action=partnerProgram">Program partnerski</a>
-        <a href="index.php?action=roleList">Lista ról</a>
+        <a href="index.php?action=rolesList">Lista ról</a>
         <a href="index.php?action=moviesList">Lista filmów</a>
         <a href="index.php?action=actorsList">Lista aktorów</a>
         <a href="index.php?action=categoriesList">Lista kategorii</a>

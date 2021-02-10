@@ -17,7 +17,7 @@ $_SESSION['countRoles'] = $i;
 if(!empty($_GET['a'])) {
     if ($_GET['a'] == 'delete') {
         $query = $dbh->query("DELETE FROM ROLE WHERE ID_ROLA=" . $_GET['id']);
-        header('Location: index.php?action=roleList');
+        header('Location: index.php?action=rolesList');
 
     }else if($_GET['a'] == 'edit'){
         if(empty($_POST['role'])){
@@ -25,7 +25,7 @@ if(!empty($_GET['a'])) {
                 $_SESSION['error'] = 'Wpisz rolę';
         }else{
             $query = $dbh->query("UPDATE ROLE SET ROLA='" . $_POST['role'] . "' WHERE ID_ROLA=" . $_GET['id']);
-            header('Location: index.php?action=roleList');
+            header('Location: index.php?action=rolesList');
         }
     }else if($_GET['a'] == 'add'){
         if(empty($_POST['role'])){
@@ -38,7 +38,7 @@ if(!empty($_GET['a'])) {
                 $_SESSION['error'] .= 'Podana rola jest już na liście...';
             }else{
                 $query = $dbh->query("INSERT INTO ROLE (ROLA) VALUES('".$role."')");
-                header('Location: index.php?action=roleList');
+                header('Location: index.php?action=rolesList');
             }
         }
     }
