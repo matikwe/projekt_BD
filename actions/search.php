@@ -4,6 +4,7 @@ include 'Movie.php';
 include "Actor.php";
 
 $dbh = new PDO('firebird:dbname=127.0.0.1:C:\bazy\PROJEKT.FDB', 'SYSDBA', 'masterkey');
+
 $query = $dbh->query("SELECT ID_KATEGORIA, KATEGORIA FROM KATEGORIE");
 
 $i = 0;

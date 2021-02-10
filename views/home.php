@@ -36,18 +36,25 @@ for($i = $_SESSION['countMovies']-1; $i >= 0; $i--) {
         echo '<h5>Rok wydania: ' . $movies->getROKWYDANIA() . '</h5>';
 
         if(empty($_SESSION['discount'])){
-            echo '<h5>Cena: ' . $movies->getBIEZACACENA() . '</h5>';
-        }else if($_SESSION['discount'] == true){
-            echo '<h5>Cena: <s>' . $movies->getBIEZACACENA() . '</s>  '.$RABAT.'</h5>';
-        }
+            echo '<h5>Cena: ' . $movies->getBIEZACACENA() . ' zł</h5>';
+        }else{
+        if($_SESSION['discount'] == true){
+            echo '<h5>Cena: <s>' . $movies->getBIEZACACENA().' zł ' . '</s>  '.round($RABAT,2).' zł</h5>';
+        }else if($_SESSION['discount'] == false){
+            echo '<h5>Cena: ' . $movies->getBIEZACACENA() . ' zł</h5>';
+        }}
 
         //przycisk wyp
         if (empty($_SESSION['currID'])) {
             echo '<a href="index.php?action=login" class="smallButton">Zaloguj się na konto użytkownika, aby wypożyczyć</a>';
         } else if (!empty($_SESSION['currID'])) {
-            echo '<a href="index.php?action=order&id_film=' . $movies->getIDFILM() . '&price=' . $movies->getBIEZACACENA() . '" class="smallButton">Wypożycz</a>';
+            echo '<a href="index.php?action=order&id_film=' . $movies->getIDFILM() . '&price=' . $movies->getBIEZACACENA() . '&a=home" class="smallButton">Wypożycz</a>';
         }
+
         echo '</article>';
     }
 }
+    if(!empty($_SESSION['errorOrder']))
+        echo '<p>'.$_SESSION['errorOrder'].'</p>';
+
 ?>

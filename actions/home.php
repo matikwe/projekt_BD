@@ -20,14 +20,17 @@ foreach($query as $row) {
 if(!empty($_SESSION['currID'])){
     $currID = $_SESSION['currID'];
 
-    $query = $dbh->query("SELECT SUM(CENA) FROM wypozyczenia WHERE ID_UZYTKOWNIK='".$currID."' AND extract(year from DATA_WYPOZYCZENIA) = extract(year from cast('NOW' as date))");
+    $query = $dbh->query("SELECT SUM(CENA-RABAT) FROM wypozyczenia WHERE ID_UZYTKOWNIK='".$currID."' AND extract(year from DATA_WYPOZYCZENIA) = extract(year from cast('NOW' as date))");
     $price = 0;
     foreach ($query as $row){
         $price = $row['SUM'];
     }
     if($price >= 200){
         $_SESSION['discount'] = true;
+    }else{
+        $_SESSION['discount'] = false;
     }
+
 }
 $_SESSION['countMovies'] = $i;
 
