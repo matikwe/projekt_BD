@@ -16,6 +16,9 @@ if(isset($_POST['buttonLogin'])){
             if ($_POST['password'] == $row['HASLO']) {
                 $correctLogin = true;
                 $_SESSION['idreff'] = $row['ID_PRACOWNIK'];
+                if($row['HASLO'] == '123'){
+                    header('Location: index.php?action=editPassword');
+                }
             }
         }
 
