@@ -16,7 +16,8 @@ $_SESSION['countRoles'] = $i;
 
 if(!empty($_GET['a'])) {
     if ($_GET['a'] == 'delete') {
-        $query = $dbh->query("DELETE FROM ROLE WHERE ID_ROLA=" . $_GET['id']);
+        $dbh->query("DELETE FROM ROLE WHERE ID_ROLA=" . $_GET['id']);
+
         header('Location: index.php?action=rolesList');
 
     }else if($_GET['a'] == 'edit'){

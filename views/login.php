@@ -28,9 +28,9 @@
 <?php }
     else{
 
-        echo '<a href="index.php?action=login&display=current">FILMY DO OBEJRZENIA</a>';
-        echo '<br><a href="index.php?action=login&display=history">WYGASLE FILMY</a>';
-        echo '<br><a href="index.php?action=logout">WYLOGUJ</a>';
+        echo '<a href="index.php?action=login&display=current" class="smallButton">FILMY DO OBEJRZENIA</a>';
+        echo '<br><a href="index.php?action=login&display=history" class="smallButton">WYGASLE FILMY</a>';
+        echo '<br><a href="index.php?action=logout" class="smallButton">WYLOGUJ</a>';
         if(!empty($_GET['display'])){
             if($_SESSION['countMoviesV2'] <= 0){
                 echo "Brak danych do wyświetlenia";
