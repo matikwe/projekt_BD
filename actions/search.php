@@ -61,4 +61,5 @@ if(isset($_POST['buttonSearch'])) {
         $i++;
     }
     $_SESSION['countActors'] = $i;
+
 }

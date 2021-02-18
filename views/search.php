@@ -72,6 +72,7 @@ if(!empty($_SESSION['countSearchMovies'])){
             echo '</article>';
     }
     }
-    if(!empty($_SESSION['errorOrder']))
-        echo '<p>'.$_SESSION['errorOrder'].'</p>';
+
+}else{
+    echo '<p>Brak powiązań dla szukanych fraz...</p>';
 }
