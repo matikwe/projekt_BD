@@ -6,7 +6,7 @@ $dbh = new PDO('firebird:dbname=127.0.0.1:C:\bazy\PROJEKT.FDB', 'SYSDBA', 'maste
 if(isset($_GET['confirmed'])) {
     $query = $dbh->query("DELETE FROM AKTORZY WHERE ID_AKTOR=".$_SESSION['ID']);
     $query = $dbh->query("DELETE FROM OBSADA WHERE ID_AKTOR=".$_SESSION['ID']);
-    header('Location: index.php?action=categoriesList');
+    header('Location: index.php?action=actorsList');
 } else {
     $query = $dbh->query("SELECT IMIE, NAZWISKO FROM AKTORZY WHERE ID_AKTOR=".$_SESSION['ID']);
     foreach($query as $row) {
@@ -15,5 +15,5 @@ if(isset($_GET['confirmed'])) {
     }
 }
 if(empty($name) || empty($surname)) {
-    header('Location: index.php?action=categoriesList');
+    header('Location: index.php?action=actorsList');
 }
