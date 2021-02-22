@@ -68,7 +68,6 @@ if(!empty($_SESSION['countSearchMovies'])){
             echo '<a href="index.php?action=order&id_film=' . $movies->getIDFILM() . '&price=' . $movies->getBIEZACACENA() . '&a=search" class="smallButton">Wypożycz</a>';
             }
 
-
             echo '</article>';
     }
     }
@@ -76,3 +75,6 @@ if(!empty($_SESSION['countSearchMovies'])){
 }else{
     echo '<p>Brak powiązań dla szukanych fraz...</p>';
 }
+
+if(!empty($_SESSION['errorOrder']))
+    echo '<p>'.$_SESSION['errorOrder'].'</p>';

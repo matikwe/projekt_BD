@@ -41,7 +41,7 @@ if(isset($_POST['buttonSearch'])) {
         LEFT OUTER JOIN KATEGORIE K ON F.ID_KATEGORIA=K.ID_KATEGORIA
         LEFT OUTER JOIN REZYSERZY R ON F.ID_REZYSER=R.ID_REZYSER
         LEFT OUTER JOIN OBSADA O ON F.ID_FILM=O.ID_FILM
-        WHERE K.ID_KATEGORIA = '".$_POST['category']."' AND( TYTUL LIKE '%".$INFO."%' OR IMIE || ' ' || NAZWISKO LIKE '%".$INFO."%' $in) ");
+        WHERE K.ID_KATEGORIA = '".$_POST['category']."' AND( TYTUL LIKE '%".$INFO."%' OR IMIE || ' ' || NAZWISKO LIKE '%".$INFO."%' $in)");
 
     $i = 0;
     foreach ($query as $row){

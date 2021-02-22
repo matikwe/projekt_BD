@@ -6,7 +6,7 @@ include "Role.php";
 $_SESSION['error']='';
 
 $dbh = new PDO('firebird:dbname=127.0.0.1:C:\bazy\PROJEKT.FDB', 'SYSDBA', 'masterkey');
-$query = $dbh->query("SELECT ID_PRACOWNIK, LOGIN, coalesce(ROLA,'brak') FROM PRACOWNICY P LEFT OUTER JOIN ROLE R ON P.ID_ROLA = R.ID_ROLA");
+$query = $dbh->query("SELECT ID_PRACOWNIK, LOGIN, coalesce(ROLA,'brak') FROM PRACOWNICY P LEFT OUTER JOIN ROLE R ON P.ID_ROLA = R.ID_ROLA ORDER BY LOGIN, ROLA");
 
 $i = 0;
 foreach ($query as $row){

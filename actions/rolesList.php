@@ -4,7 +4,7 @@ include "Role.php";
 $_SESSION['error']='';
 
 $dbh = new PDO('firebird:dbname=127.0.0.1:C:\bazy\PROJEKT.FDB', 'SYSDBA', 'masterkey');
-$query = $dbh->query("SELECT * FROM ROLE");
+$query = $dbh->query("SELECT * FROM ROLE ORDER BY ROLA");
 
 $i=0;
 foreach ($query as $row){

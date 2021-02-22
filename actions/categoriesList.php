@@ -3,7 +3,7 @@
 include 'Category.php';
 
 $dbh = new PDO('firebird:dbname=127.0.0.1:C:\bazy\PROJEKT.FDB', 'SYSDBA', 'masterkey');
-$query = $dbh->query("SELECT * FROM KATEGORIE");
+$query = $dbh->query("SELECT * FROM KATEGORIE ORDER BY KATEGORIA");
 
 $i = 0;
 foreach($query as $row) {
