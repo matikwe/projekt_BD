@@ -11,6 +11,7 @@ include "topMenu.php";
 ?>
 
 <main>
+    <a href="index.php?action=addMovie" class="smallButton">Dodaj film...</a>
     <?php
     echo '<table border=1>';
     echo '<tr><th>ID filmu</th><th>Tytuł</th><th>Nazwa kategorii</th><th>Reżyser</th><th>Rok wydania</th><th>Przedział wiekowy</th><th>Bieżąca cena</th><th>Akcje</th></tr>';
@@ -31,11 +32,11 @@ include "topMenu.php";
         echo '</td><td>';
         echo $movies[$i]->getBIEZACACENA();
         echo '</td><td>';
-        echo '<a href="index.php?action=editMovie&id='.$movies[$i]->getIDFILM().'">Edytuj</a>';
-        echo '<a href="index.php?action=deleteMovie&id='.$movies[$i]->getIDFILM().'"> Usuń</a>';
+        echo '<a href="index.php?action=editMovie&id='.$movies[$i]->getIDFILM().'" class="smallButtonV2">Edytuj</a>';
+        echo '<a href="index.php?action=deleteMovie&id='.$movies[$i]->getIDFILM().'" class="smallButtonV2"> Usuń</a>';
         echo '</td></tr>';
     }
     echo '</table>';
     ?>
-    <a href="index.php?action=addMovie">Dodaj film...</a>
+
 </main>

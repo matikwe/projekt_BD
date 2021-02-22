@@ -10,6 +10,7 @@
 include "topMenu.php";
 ?>
 <main>
+    <a href="index.php?action=addActor" class="smallButton">Dodaj aktora...</a>
     <?php
         echo '<table border=1>';
         echo '<tr><th>ID</th><th>Imię</th><th>Nazwisko</th><th>Akcje</th></tr>';
@@ -22,11 +23,11 @@ include "topMenu.php";
             echo '</td><td>';
             echo $actors[$i]->getNAZWISKO();
             echo '</td><td>';
-            echo '<a href="index.php?action=editActor&id='.$actors[$i]->getIDAKTOR().'">Edytuj</a>';
-            echo '<a href="index.php?action=deleteActor"> Usuń</a>';
+            echo '<a href="index.php?action=editActor&id='.$actors[$i]->getIDAKTOR().'" class="smallButtonV2">Edytuj</a>';
+            echo '<a href="index.php?action=deleteActor" class="smallButtonV2"> Usuń</a>';
             echo '</td></tr>';
         }
         echo '</table>';
     ?>
-    <a href="index.php?action=addActor">Dodaj aktora...</a>
+
 </main>

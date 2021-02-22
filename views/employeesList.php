@@ -22,11 +22,11 @@ include "topMenu.php";
             echo '</td><td>';
             echo $employees->getIDROLA();
             echo '</td><td>';
-            echo '<a href="index.php?action=employeesList&a=edit&id=' . $employees->getIDPRACOWNIK() . '">Edytuj</a>';
-            echo '<a href="index.php?action=employeesList&a=delete&id=' . $employees->getIDPRACOWNIK() . '"> Usuń</a>';
+            echo '<a href="index.php?action=employeesList&a=edit&id=' . $employees->getIDPRACOWNIK() . '" class="smallButtonV2">Edytuj</a>';
+            echo '<a href="index.php?action=employeesList&a=delete&id=' . $employees->getIDPRACOWNIK() . '"class="smallButtonV2"> Usuń</a>';
             echo '</td></tr>';
         }
-        echo'<a href="index.php?action=employeesList&a=add">Dodaj pracownika</a>';
+        echo'<a href="index.php?action=employeesList&a=add" class="smallButton">Dodaj pracownika</a>';
     }else if($_GET['a'] == 'edit'){
         echo '<form action="index.php?action=employeesList&a=edit&id='.$_GET['id'].'" class="test2" method="POST">';
         echo'<select name="role">';

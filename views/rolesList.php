@@ -20,11 +20,11 @@ include "topMenu.php";
             echo '<tr><td>';
             echo $roles->getROLA();
             echo '</td><td>';
-            echo '<a href="index.php?action=rolesList&a=edit&id=' . $roles->getIDROLA() . '">Edytuj</a>';
-            echo '<a href="index.php?action=rolesList&a=delete&id=' . $roles->getIDROLA() . '"> Usuń</a>';
+            echo '<a href="index.php?action=rolesList&a=edit&id=' . $roles->getIDROLA() . '" class="smallButtonV2">Edytuj</a>';
+            echo '<a href="index.php?action=rolesList&a=delete&id=' . $roles->getIDROLA() . '" class="smallButtonV2"> Usuń</a>';
             echo '</td></tr>';
         }
-        echo '<a href="index.php?action=rolesList&a=add">Dodaj rolę</a>';
+        echo '<a href="index.php?action=rolesList&a=add" class="smallButton">Dodaj rolę</a>';
     }else if($_GET['a'] == 'edit'){
         echo '<form action="index.php?action=rolesList&a=edit&id='.$_GET['id'].'" class="test2" method="POST">';
         echo '<input type="text" placeholder="Wpisz nową rolę" name="role">';
