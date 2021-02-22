@@ -33,7 +33,8 @@ include "topMenu.php";
         echo $movies[$i]->getBIEZACACENA();
         echo '</td><td>';
         echo '<a href="index.php?action=editMovie&id='.$movies[$i]->getIDFILM().'" class="smallButtonV2">Edytuj</a>';
-        echo '<a href="index.php?action=deleteMovie&id='.$movies[$i]->getIDFILM().'" class="smallButtonV2"> Usuń</a>';
+        echo '<a href="index.php?action=deleteMovie&id='.$movies[$i]->getIDFILM().'" class="smallButtonV2">Usuń</a>';
+        echo '<a href="index.php?action=castList&id='.$movies[$i]->getIDFILM().'" class="smallButtonV2">Obsada</a>';
         echo '</td></tr>';
     }
     echo '</table>';
