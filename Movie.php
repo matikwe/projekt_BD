@@ -200,6 +200,4 @@ class Movie
     {
         $this->BIEZACA_CENA = $BIEZACA_CENA;
     }
-
-
 }

@@ -3,7 +3,7 @@ session_start();
 
 define('_ROOT_PATH', dirname(__FILE__));
 
-$actions = array('home', 'login', 'registration', 'logout', 'adminPanel', 'moviesList', 'actorsList', 'addActor', 'rolesList', 'employeesList', 'editPassword' , 'partnerProgram', 'search', 'order', 'addActor', 'editActor', 'categoriesList', 'editCategory', 'addCategories', 'deleteActor', 'deleteCategory'); //wpisywać stworzone podstrony
+$actions = array('home', 'login', 'registration', 'logout', 'adminPanel', 'moviesList', 'actorsList', 'addActor', 'rolesList', 'employeesList', 'editPassword' , 'partnerProgram', 'search', 'order', 'addActor', 'editActor', 'categoriesList', 'editCategory', 'addCategories', 'deleteActor', 'deleteCategory', 'addMovie'); //wpisywać stworzone podstrony
 $action = 'home'; //zaczyna od...
 
 if(array_key_exists('action', $_GET))

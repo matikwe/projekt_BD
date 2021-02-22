@@ -24,8 +24,6 @@ class MovieV2
     $this->DATA_WYPOZYCZENIA = $DATA_WYPOZYCZENIA;
     $this->DATA_WYGASNIECIA_FILMU = $DATA_WYGASNIECIA_FILMU;
     $this->CENA = $CENA;
-
-
 }/**
  * @return mixed
  */
