@@ -10,7 +10,7 @@ if(isset($_POST['category'])) {
     if($count <= 0){
         $query = $dbh->query("INSERT INTO KATEGORIE (KATEGORIA) VALUES('".$category."')");
         header('Location: index.php?action=categoriesList');
-    }else{
+    } else {
         $_SESSION['error'] = 'Kategoria o takich danych już istnieje';
     }
 
