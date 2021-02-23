@@ -14,6 +14,11 @@ include "topMenu.php";
     <form action="index.php?action=addDirector" class="test2" method="post">
         <input type="text" placeholder="Imię" name="name">
         <input type="text" placeholder="Nazwisko" name="surname">
-        <input type="submit" value="Edytuj" class="submit" name="buttonLogin">
+        <?php
+        if(!empty($_SESSION['error'])){
+            echo'<p>'.$_SESSION['error'].'</p>';
+        }
+        ?>
+        <input type="submit" value="Dodaj" class="submit" name="buttonLogin">
     </form>
 </main>

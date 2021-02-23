@@ -19,7 +19,7 @@ include "topMenu.php";
         echo '<tr><td>';
         echo $actors[$i]->getIMIE().' '.$actors[$i]->getNAZWISKO();
         echo '</td><td>';
-        echo '<a href="index.php?action=deleteActor" class="smallButtonV2">Usuń</a>';
+        echo '<a href="index.php?action=deleteCast&id='.$actors[$i]->getIDAKTOR().'" class="smallButtonV2">Usuń</a>';
         echo '</td></tr>';
     }
     echo '</table>';

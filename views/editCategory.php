@@ -13,6 +13,11 @@ include "topMenu.php";
 <main>
     <form action="index.php?action=editCategory" class="test2" method="post">
         <input type="text" placeholder="Nazwa" name="name">
+        <?php
+        if(!empty($_SESSION['error'])){
+            echo'<p>'.$_SESSION['error'].'</p>';
+        }
+        ?>
         <input type="submit" value="Edytuj" class="submit" name="buttonLogin">
     </form>
 </main>

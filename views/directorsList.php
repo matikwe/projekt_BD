@@ -23,8 +23,8 @@ include "topMenu.php";
         echo '</td><td>';
         echo $dirs[$i]->getNAZWISKO();
         echo '</td><td>';
-        echo '<a href="index.php?action=editActor&id='.$dirs[$i]->getIDREZYSER().'" class="smallButtonV2">Edytuj</a>';
-        echo '<a href="index.php?action=deleteActor" class="smallButtonV2">Usuń</a>';
+        echo '<a href="index.php?action=editDirector&id='.$dirs[$i]->getIDREZYSER().'" class="smallButtonV2">Edytuj</a>';
+        echo '<a href="index.php?action=deleteDirector&id='.$dirs[$i]->getIDREZYSER().'" class="smallButtonV2">Usuń</a>';
         echo '</td></tr>';
     }
     echo '</table>';

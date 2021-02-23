@@ -24,7 +24,7 @@ include "topMenu.php";
             echo $actors[$i]->getNAZWISKO();
             echo '</td><td>';
             echo '<a href="index.php?action=editActor&id='.$actors[$i]->getIDAKTOR().'" class="smallButtonV2">Edytuj</a>';
-            echo '<a href="index.php?action=deleteActor" class="smallButtonV2"> Usuń</a>';
+            echo '<a href="index.php?action=deleteActor&id='.$actors[$i]->getIDAKTOR().'" class="smallButtonV2">Usuń</a>';
             echo '</td></tr>';
         }
         echo '</table>';

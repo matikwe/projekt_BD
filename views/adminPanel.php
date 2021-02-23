@@ -36,6 +36,7 @@ include "topMenu.php";
         <a href="index.php?action=moviesList" class="smallButton">Lista filmów</a>
         <a href="index.php?action=actorsList" class="smallButton">Lista aktorów</a>
         <a href="index.php?action=categoriesList" class="smallButton">Lista kategorii</a>
+        <a href="index.php?action=directorsList" class="smallButton">Lista reżyserów</a>
         <a href="index.php?action=logout" class="smallButton">WYLOGUJ</a>
     </main>
 <?php } ?>

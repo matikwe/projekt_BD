@@ -61,11 +61,11 @@ nav {
 main .test2 input {
     width: 40%;
     height: 40px;
-    background: gray;
+    background: #222222;
     border-radius: 40px;
     border: 1px solid var(--orange);
     padding: 0 15px;
-    color: #FFF;
+    color: #CCCCCC;
     font-size: 14px;
     display: block;
     margin-left: 30%;
@@ -80,7 +80,7 @@ main .test2 textarea {
     border-radius: 20px;
     border: 1px solid var(--orange);
     padding: 15px;
-    color: #FFF;
+    color: #222222;
     font-size: 14px;
     display: block;
     margin-left: 40%;

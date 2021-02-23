@@ -36,8 +36,9 @@ include "topMenu.php";
             ?>
         </select>
         <input type="number" placeholder="Rok wydania" min="1870" max="2100" name="year">
-        <input type="text" placeholder="Przedział wiekowy" min="3" max="21" name="age">
-        <input type="text" placeholder="Cena bieżąca" name="price">
+        <input type="number" placeholder="Przedział wiekowy" min="3" max="21" name="age">
+        <input type="number" placeholder="Cena bieżąca (zł)" name="price1">
+        <input type="number" placeholder="Cena bieżąca (gr)" min="0" max="99" name="price2">
         <?php
         if(!empty($_SESSION['error'])){
             echo'<p>'.$_SESSION['error'].'</p>';
