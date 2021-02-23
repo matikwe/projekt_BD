@@ -13,12 +13,11 @@ include "topMenu.php";
     <a href="index.php?action=addActor" class="smallButton">Dodaj aktora...</a>
     <?php
         echo '<table border=1>';
-        echo '<tr><th>ID</th><th>Imię</th><th>Nazwisko</th><th>Akcje</th></tr>';
+        echo '<tr><th>Imię</th><th>Nazwisko</th><th>Akcje</th></tr>';
         $count = $i;
         for($i = 0; $i < $count; $i++) {
-            echo '<tr><td>';
-            echo $actors[$i]->getIDAKTOR();
-            echo '</td><td>';
+            echo '<tr>';
+            echo '<td>';
             echo $actors[$i]->getIMIE();
             echo '</td><td>';
             echo $actors[$i]->getNAZWISKO();

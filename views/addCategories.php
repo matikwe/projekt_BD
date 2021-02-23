@@ -17,6 +17,6 @@ include "topMenu.php";
             echo'<p>'.$_SESSION['error'].'</p>';
         }
         ?>
-        <input type="submit" value="Dodaj" class="submit">
+        <input type="submit" value="Dodaj" class="submit" name="add">
     </form>
 </main>

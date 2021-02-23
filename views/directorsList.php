@@ -13,12 +13,11 @@ include "topMenu.php";
     <a href="index.php?action=addDirector" class="smallButton">Dodaj reżysera...</a>
     <?php
     echo '<table border=1>';
-    echo '<tr><th>ID</th><th>Imię</th><th>Nazwisko</th><th>Akcje</th></tr>';
+    echo '<tr><th>Imię</th><th>Nazwisko</th><th>Akcje</th></tr>';
     $count = $i;
     for($i = 0; $i < $count; $i++) {
-        echo '<tr><td>';
-        echo $dirs[$i]->getIDREZYSER();
-        echo '</td><td>';
+        echo '<tr>';
+        echo '<td>';
         echo $dirs[$i]->getIMIE();
         echo '</td><td>';
         echo $dirs[$i]->getNAZWISKO();

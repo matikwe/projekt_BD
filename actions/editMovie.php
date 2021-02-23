@@ -3,6 +3,8 @@
 include 'Director.php';
 include 'Category.php';
 
+$_SESSION['error'] = '';
+
 if(isset($_GET['id'])) {
     $_SESSION['ID'] = $_GET['id'];
 }

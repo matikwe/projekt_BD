@@ -14,12 +14,11 @@ include "topMenu.php";
     <a href="index.php?action=addCategories" class="smallButton">Dodaj kategorię...</a>
     <?php
     echo '<table border=1>';
-    echo '<tr><th>ID</th><th>Nazwa kategorii</th><th>Akcje</th></tr>';
+    echo '<tr><th>Nazwa kategorii</th><th>Akcje</th></tr>';
     $count = $i;
     for($i = 0; $i < $count; $i++) {
-        echo '<tr><td>';
-        echo $categories[$i]->getIDKATEGORIA();
-        echo '</td><td>';
+        echo '<tr>';
+        echo '<td>';
         echo $categories[$i]->getKATEGORIA();
         echo '</td><td>';
         echo '<a href="index.php?action=editCategory&id='.$categories[$i]->getIDKATEGORIA().'" class="smallButtonV2">Edytuj</a>';

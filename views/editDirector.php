@@ -19,6 +19,6 @@ include "topMenu.php";
             echo'<p>'.$_SESSION['error'].'</p>';
         }
         ?>
-        <input type="submit" value="Edytuj" class="submit" name="buttonLogin">
+        <input type="submit" value="Edytuj" class="submit" name="add">
     </form>
 </main>

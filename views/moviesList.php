@@ -14,12 +14,11 @@ include "topMenu.php";
     <a href="index.php?action=addMovie" class="smallButton">Dodaj film...</a>
     <?php
     echo '<table border=1>';
-    echo '<tr><th>ID filmu</th><th>Tytuł</th><th>Nazwa kategorii</th><th>Reżyser</th><th>Rok wydania</th><th>Przedział wiekowy</th><th>Bieżąca cena</th><th>Akcje</th></tr>';
+    echo '<tr><th>Tytuł</th><th>Nazwa kategorii</th><th>Reżyser</th><th>Rok wydania</th><th>Przedział wiekowy</th><th>Bieżąca cena</th><th>Akcje</th></tr>';
     $count = $i;
     for($i = 0; $i < $count; $i++) {
-        echo '<tr><td>';
-        echo $movies[$i]->getIDFILM();
-        echo '</td><td>';
+        echo '<tr>';
+        echo '<td>';
         echo $movies[$i]->getTYTUL();
         echo '</td><td>';
         echo $movies[$i]->getKATEGORIA();
